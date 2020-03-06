@@ -29,8 +29,20 @@ app.get('/register', (req, res) => {
   res.render('register.ejs');
 });
 
-app.post('/register', (req, res) => {
+app.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
+  try {
+    const hashedPassword = await bcrypt.hash(password, 10);
+    users.push({
+      id: Date.now().toString(),
+      name,
+      email,
+      password: hashedPassword,
+    });
+    res.redirect('/login');
+  } catch {
+    res.redirect('/register');
+  }
 });
 
 app.post('/login', (req, res) => {});
