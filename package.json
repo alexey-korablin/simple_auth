@@ -10,7 +10,7 @@
   "author": "'Alexey_Korablin' <'Alexey_Korablin@epam.com'>",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "express-flash": "0.0.2",
